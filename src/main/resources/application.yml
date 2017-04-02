@@ -1,11 +1,11 @@
 spring:
   application:
     name: MidgardCharacterOrganizer
-  profiles:
-    active: default
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+#  profiles:
+#    active: default
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
   #    dialect: org.hibernate.dialect.H2Dialect
 #    naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
 #    show-sql: true
@@ -20,3 +20,12 @@ spring:
 
 server:
   port: 8080
+
+
+---
+
+spring:
+  profiles: dev
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

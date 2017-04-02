@@ -1,4 +1,4 @@
-package de.domson.midgard.armour;
+package de.domson.midgard.objects.armour;
 
 
 /**

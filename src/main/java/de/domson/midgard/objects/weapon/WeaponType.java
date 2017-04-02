@@ -1,4 +1,4 @@
-package de.domson.midgard.weapon;
+package de.domson.midgard.objects.weapon;
 
 /**
  * Created by domson on 30.03.17.
