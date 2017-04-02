@@ -1,9 +1,8 @@
 package de.domson.midgard.repository;
 
-import de.domson.midgard.pojos.User;
 import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
+import de.domson.midgard.pojos.User;
 
 /**
  * Created by domson on 24.05.16.

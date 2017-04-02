@@ -1,12 +1,11 @@
 package de.domson.midgard.service;
 
-import de.domson.midgard.repository.UserRepository;
-import de.domson.midgard.pojos.User;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import de.domson.midgard.pojos.User;
+import de.domson.midgard.repository.UserRepository;
+
 
 /**
  * Created by domson on 02.04.17.

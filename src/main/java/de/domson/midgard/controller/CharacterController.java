@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CharacterController {
 
-    @RequestMapping(value="/char", method = RequestMethod.GET)
+    @RequestMapping(value = "/char", method = RequestMethod.GET)
     public String testme(){
         return "Hello";
     }
