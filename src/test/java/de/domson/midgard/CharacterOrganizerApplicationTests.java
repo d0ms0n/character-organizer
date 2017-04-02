@@ -30,12 +30,12 @@ public class CharacterOrganizerApplicationTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
 		userRepository.deleteAll();
-		userRepository.save(new User("user1","****"));
+		userRepository.save(new User("user1","user","test@test.de","****"));
 	}
 
 	@Test
 	public void contextLoads() {
-		User user1 = userRepository.findByUsername("user1");
+		User user1 = userRepository.findUserByEmail("test@test.de");
 		Assert.assertEquals(user1.getPassword(),"****");
 	}
 
