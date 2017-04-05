@@ -2,12 +2,12 @@ package de.domson.midgard.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import de.domson.midgard.pojos.User;
+import de.domson.midgard.model.User;
 import de.domson.midgard.service.UserService;
 import javassist.NotFoundException;
-
 
 
 /**
@@ -19,16 +19,16 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<User> getAllUsers(){
 
         return userService.getAllUsers();
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET, params = {"firstname"})
-    public List<User> getAllUsersFiltered(@RequestParam("firstname") String firstname){
+    @RequestMapping(value = "/users/username/{username}", method = RequestMethod.GET)
+    public User getAllUsersFiltered(@PathVariable("username") String username){
 
-        return userService.getUsersByFirstname(firstname);
+        return userService.getUserByUsername(username);
     }
 
     @RequestMapping(value = "/users/{id}", method = RequestMethod.GET)

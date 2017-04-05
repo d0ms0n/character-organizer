@@ -3,7 +3,7 @@ package de.domson.midgard.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import de.domson.midgard.pojos.User;
+import de.domson.midgard.model.User;
 import de.domson.midgard.repository.UserRepository;
 
 
@@ -21,9 +21,9 @@ public class UserService {
         return users;
     }
 
-    public List<User> getUsersByFirstname(String firstname){
-        List<User> users = userRepository.findUsersByFirstname(firstname);
-        return users;
+    public User getUserByUsername(String username){
+        User user = userRepository.findUserByUsername(username);
+        return user;
     }
 
     public User getUserById(Long id){
