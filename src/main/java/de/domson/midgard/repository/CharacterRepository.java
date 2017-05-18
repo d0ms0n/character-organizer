@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface CharacterRepository extends CrudRepository<Character, Long>{
 
-    @Query(value = "SELECT * FROM character c where c.username = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM characters c where c.username = ?", nativeQuery = true)
     List<Character> findCharactersByUsername(String username);
 
 }

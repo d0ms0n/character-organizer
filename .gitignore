@@ -1,1 +1,7 @@
 .idea
+/classes/production/character-organizer/application.yml
+.gradle/
+build/
+charOrganizer.tmp/
+classes/
+src/main/resources/static/
