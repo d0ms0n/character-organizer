@@ -12,7 +12,7 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long charId;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
     private User user;
 

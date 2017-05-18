@@ -1,6 +1,7 @@
 package de.domson.midgard.repository;
 
 import de.domson.midgard.model.Character;
+import de.domson.midgard.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +31,13 @@ public class CharacterRepositoryTests {
     @Autowired
     CharacterRepository characterRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Test
     @Sql({"/data-hsqldb.sql"})
     public void testChar(){
-        Long charId = new Long(1);
+        Long charId = 1L;
         Character theChar = characterRepository.findOne(charId);
         assertThat(theChar.getCharId(), equalTo(charId));
     }
@@ -48,10 +52,9 @@ public class CharacterRepositoryTests {
     @Test
     @Sql({"/data-hsqldb.sql"})
     public void testChar3(){
-        String username = "DomSon";
-        List<Character> chars = characterRepository.findCharactersByUsername(username);
+
+        List<User> usr = userRepository.findUsersByUsername("DomSon");
+        List<Character> chars = characterRepository.findCharactersByUser(usr.get(0));
         assertThat(chars, hasSize(1));
-        List<Character> chars2 = characterRepository.findCharactersByUsername(username+"test");
-        assertThat(chars, empty());
     }
 }

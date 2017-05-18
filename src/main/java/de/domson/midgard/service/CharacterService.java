@@ -1,6 +1,7 @@
 package de.domson.midgard.service;
 
 import de.domson.midgard.model.Character;
+import de.domson.midgard.model.User;
 import de.domson.midgard.repository.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,8 @@ public class CharacterService {
         return character;
     }
 
-    public List<Character> getAllCharsForUsername(String username){
-        List<Character> chars = (List<Character>) charRepository.findCharactersByUsername(username);
+    public List<Character> getAllCharsForUser(User user){
+        List<Character> chars = (List<Character>) charRepository.findCharactersByUser(user);
         return chars;
     }
 }
