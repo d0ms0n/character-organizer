@@ -49,6 +49,6 @@ public class UserControllerIntegrationTests {
     public void getLogin1() throws Exception {
 
         this.mockMvc.perform(get("/users")).andDo(print())
-                .andExpect(status().isFound());
+                .andExpect(status().isOk());
     }
 }
